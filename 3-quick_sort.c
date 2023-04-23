@@ -68,7 +68,7 @@ void QuickSort(int **array, int lb, int ub)
 {
 	int loc;
 
-	if (lb < ub)
+	if (lb < ub && lb >= 0)
 	{
 		loc = partition(array, lb, ub);
 
