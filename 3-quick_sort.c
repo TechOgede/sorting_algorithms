@@ -37,10 +37,10 @@ int partition(int **array, int lb, int ub)
 {
 	int pivot = (*array)[ub], temp, j;
 
+	temp = lb - 1;
+
 	for (j = lb; j < ub; j++)
 	{
-		temp = lb - 1;
-
 		if ((*array)[j] <= pivot)
 		{
 			temp++;
@@ -51,6 +51,7 @@ int partition(int **array, int lb, int ub)
 	temp++;
 	swap(&(*array)[ub], &(*array)[temp]);
 	print_array(*array, ub + 1);
+	
 	return (temp);
 }
 
