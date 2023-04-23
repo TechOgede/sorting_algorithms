@@ -11,6 +11,8 @@
 * such that values less or equal to the pivot are to the left,
 * values greater than the pivot are to the right.
 * This function implements the lomuto partition scheme.
+*
+* Return: an int that would be used to partition the array
 */
 
 int partition(int **array, int lb, int ub)
