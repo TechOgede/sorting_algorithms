@@ -52,7 +52,6 @@ int partition(int **array, size_t size, int lb, int ub)
 	temp++;
 	swap(&(*array)[ub], &(*array)[temp]);
 	print_array(*array, size);
-	
 	return (temp);
 }
 
