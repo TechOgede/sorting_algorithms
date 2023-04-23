@@ -22,6 +22,7 @@ void swap(int *n1, int *n2)
 /**
 * partition - meat of the quick sort algorithm
 * @array: ponter to an array
+* @size: size of the array
 * @lb: lower bound of the array
 * @ub: upper bound of the array
 *
@@ -33,7 +34,7 @@ void swap(int *n1, int *n2)
 * Return: an int that would be used to partition the array
 */
 
-int partition(int **array, int lb, int ub)
+int partition(int **array, size_t size, int lb, int ub)
 {
 	int pivot = (*array)[ub], temp, j;
 
@@ -45,12 +46,12 @@ int partition(int **array, int lb, int ub)
 		{
 			temp++;
 			swap(&(*array)[j], &(*array)[temp]);
-			print_array(*array, ub + 1);
+			print_array(*array, size);
 		}
 	}
 	temp++;
 	swap(&(*array)[ub], &(*array)[temp]);
-	print_array(*array, ub + 1);
+	print_array(*array, size);
 	
 	return (temp);
 }
@@ -58,6 +59,7 @@ int partition(int **array, int lb, int ub)
 /**
 * QuickSort - actual driver for the quick sort implementation in this case
 * @array: array of values
+* @size: size of the array
 * @lb: lower bound of the array
 * @ub: upper bound of the array
 *
@@ -65,17 +67,17 @@ int partition(int **array, int lb, int ub)
 * at each recursive level.
 */
 
-void QuickSort(int **array, int lb, int ub)
+void QuickSort(int **array, size_t size, int lb, int ub)
 {
 	int loc;
 
-	if (lb < ub && lb >= 0)
+	if (lb < ub)
 	{
-		loc = partition(array, lb, ub);
+		loc = partition(array, size, lb, ub);
 
-		QuickSort(array, lb, loc - 1);
+		QuickSort(array, size, lb, loc - 1);
 
-		QuickSort(array, loc + 1, ub);
+		QuickSort(array, size, loc + 1, ub);
 	}
 }
 
@@ -96,5 +98,5 @@ void quick_sort(int *array, size_t size)
 	lb = 0;
 	ub = size - 1;
 
-	QuickSort(&array, lb, ub);
+	QuickSort(&array, size, lb, ub);
 }
