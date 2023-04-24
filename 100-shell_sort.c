@@ -36,7 +36,7 @@ void shell_sort(int *array, size_t size)
 	while (k <= (n - 1) / 9)
 		k = 3 * k + 1;
 
-	for (interval = k; interval >= 1; interval = interval / 3)
+	for (interval = k; interval >= 1; interval = (interval - 1) / 3)
 	{
 		for (i = interval; i < n; i++)
 		{
