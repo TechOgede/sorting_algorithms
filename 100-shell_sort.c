@@ -32,6 +32,9 @@ void shell_sort(int *array, size_t size)
 {
 	int i, j, k, interval, n = size;
 
+	if (!array || size == 0)
+		return;
+
 	k = 1;
 	while (k <= (n - 1) / 9)
 		k = 3 * k + 1;
