@@ -30,7 +30,7 @@ void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 void QuickSort(int **array, size_t size, int lb, int ub);
 int partitiion(int **array, size_t size, int lb, int ub);
-
+void shell_sort(int *array, size_t size);
 
 
 
