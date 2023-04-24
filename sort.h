@@ -31,8 +31,10 @@ void quick_sort(int *array, size_t size);
 void QuickSort(int **array, size_t size, int lb, int ub);
 int partitiion(int **array, size_t size, int lb, int ub);
 void shell_sort(int *array, size_t size);
-
-
+void cocktail_sort_list(listint_t **list);
+void swap_nodes(listint_t **list, listint_t **tail,
+		listint_t **curr, listint_t **next_node);
+void counting_sort(int *array, size_t size);
 
 
 
