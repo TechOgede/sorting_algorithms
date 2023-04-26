@@ -42,7 +42,7 @@ int partition(int **array, size_t size, int lb, int ub)
 
 	for (j = lb; j < ub; j++)
 	{
-		if ((*array)[j] <= pivot)
+		if ((*array)[j] < pivot)
 		{
 			temp++;
 			swap(&(*array)[j], &(*array)[temp]);
@@ -94,7 +94,7 @@ void quick_sort(int *array, size_t size)
 {
 	int lb, ub;
 
-	if (!array || size == 0)
+	if (!array || size < 2)
 		return;
 	lb = 0;
 	ub = size - 1;
